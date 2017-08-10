@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<style>
+		* {
+			background-color: #4c6580 !important;
+			border-radius: 10px;
+		}
+	</style>
+	<title>Bakery</title>
+	<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+	<link rel="stylesheet" type="text/css" href="./bootstrap-3.3.7-dist/css/bootstrap.min.css">
+	<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="./bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	<script src="src/controllers/base.controller.js"></script>
+	<script src="src/directives/billRow.js"></script>
+</head>
+<body ng-controller="baseCtrl">
+	<header style="text-align: center;">
+		<h2>Welcome</h2>
+	</header>
+	<hr/>
+	<div class="container">
+		<label for="shopsList">Shop:</label>
+		<select id="shopsList" autofocus onchange=shopChange()>
+			<option selected>Select a Shop</option>
+		</select>
+		<label for="dateSelected">Date:</label>
+		<input type="date" id="dateSelected" disabled="true" onchange=tripCounter()>
+		<label for="trip">Trip:</label>
+		<input type="text" id="trip" disabled="true">
+	</div>
+
+	<div class="container" contenteditable="true">
+		<input type="text" ng-model="text">
+		<br/>
+		{{text}}
+	</div>
+	<table>
+		<thead>
+			<tr>
+				<th>
+					Item
+				</th>
+				<th>
+					Quantity
+				</th>
+				<th>
+					Type
+				</th>
+				<th>
+					Rate
+				</th>
+				<th>
+					Discount
+				</th>
+				<th>
+					Price
+				</th>
+				<th>
+					
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr my-directive>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
